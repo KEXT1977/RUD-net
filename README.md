@@ -12,7 +12,7 @@ This repository contains an official implementation of RUD-Net of paper
 
 ### Environment
 
-This code is developed using on **Python 3.8** and Pytorch 1.8.0 on Ubuntu 20.04.6 with NVIDIA GPUs. Training and testing are performed using 1 GeForce GTX 3060 GPU with CUDA 11.3. Other platforms or GPUs are not tested.
+This code is developed using on **Python 3.8** and Pytorch 1.11.0 on Ubuntu 20.04.6 with NVIDIA GPUs. Training and testing are performed using 1 GeForce GTX 3060 GPU with CUDA 11.3. Other platforms or GPUs are not tested.
 
 ### Install
 
@@ -61,15 +61,14 @@ code
    |       |-- rebi_mask
    |       |-- mask_bone
    |       |-- finetune
-   |           |-- finetune
-   |               |-- train.json
-   |               |-- test.json
-   |               |-- train
-   |                   |-- mask
-   |                   |-- origin
-   |               |-- test
-   |                   |-- mask
-   |                   |-- origin
+   |           |-- train.json
+   |           |-- test.json
+   |           |-- train
+   |               |-- mask
+   |               |-- origin
+   |           |-- test
+   |               |-- mask
+   |               |-- origin
 ````
 
 ### Train
