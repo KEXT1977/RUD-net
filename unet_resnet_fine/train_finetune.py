@@ -250,15 +250,18 @@ def main():
 
         ## Notification 
         T2 = time.time()
+
         mail_host="smtp.qq.com"  #设置服务器
-        mail_user="815991349"    #用户名
-        mail_pass="xqoxmjoppninbefg"   #口令 
-        sender = '815991349@qq.com'
-        receivers = ['jdyx815991349@163.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
-        content = log_name + ' 请到平台查收运行结果。\n本次运行时间为：{:.2f} s \n最终训练集的loss为：{:.4f}'.format(T2-T1,total_test_loss)
+        mail_user=""    #用户名
+        mail_pass=""   #口令 
+
+        sender = ''
+        receivers = ['']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+        content = '请到平台查收运行结果。\n本次运行时间为：{:.2f} s \n最终训练集的loss为：{:.4f}'.format(T2-T1,total_test_loss)
         message = MIMEText(content, 'plain', 'utf-8')
         message['From'] = Header('AI Notification')
         message['To'] =  Header("Master Chen")
+
         subject = '模型训练结束'
         message['Subject'] = Header(subject, 'utf-8')
         try:
