@@ -61,8 +61,6 @@ code
    |       |-- rebi_mask
    |       |-- mask_bone
    |       |-- finetune
-   |           |-- train.json
-   |           |-- test.json
    |           |-- train
    |               |-- mask
    |               |-- origin
