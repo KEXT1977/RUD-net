@@ -27,17 +27,17 @@ conda activate RUD
 
 ### Data
 
-1. Download the [Hospital CT]() into `dataset`. (Now is not avaliable)
-2. Run all the **Jupyter Notebook documents** in order:
+1. Download the [Hospital CT](https://drive.google.com/drive/folders/1dhHkyqxFGOsk7dSmSxcFLB_eVh0hV4jp?usp=share_link) into `dataset`. 
+2. Run all the **Jupyter Notebook**  documents in order:
    1: Into the dataset
     ```shell
     cd dataset
     ```
-    2:  data_for_3Dircadb1.ipynb
-    3:  data_for_hospital_data.ipynb
-    4:  mask_bone_for_hospital_data.ipynb
+    2: Run  ``` data_for_3Dircadb1.ipynb```
+    3: Run  ``` data_for_hospital_data.ipynb```
+    4: Run  ``` mask_bone_for_hospital_data.ipynb```
 .
-3. Your `dataset` directory should look like this:
+1. Your `dataset` directory should look like this:
 
 ````
 code
@@ -74,7 +74,7 @@ code
 
 ### Train
 
-Please specify the configuration in ```train.py``` for each document.
+Please specify the configuration in ```train.py``` or ```train_XXX.py``` for each document.
 Attention:
 1. the ```CHECK_ACC = True``` and ```NEW_DATA = True``` should be check.
 2. the ```IMG_DIR``` in ```train.py``` should be change.
