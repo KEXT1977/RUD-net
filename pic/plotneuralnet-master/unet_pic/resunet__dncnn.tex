@@ -51,7 +51,7 @@
         }
     };
 
-\pic[shift={(0.5,0,0)}] at (pool_b1-east) 
+\pic[shift={(0.5,-1,0)}] at (pool_b1-east) 
     {Box={
         name=conv1,
         caption=ResNet50,
@@ -66,7 +66,7 @@
 
 \draw [connection]  (pool_b1-east)    -- node {\midarrow} (conv1-west);
 
-\pic[shift={ (1,0,0) }] at (conv1-east) 
+\pic[shift={ (1,-1,0) }] at (conv1-east) 
     {RightBandedBox={
         name=ccr_b2,
         caption= ,
@@ -75,7 +75,7 @@
         fill=\ConvColor,
         bandfill=\ConvReluColor,
         height=28,
-        width={ 3.5 , 3.5 },
+        width={ 2.5 , 2.5 },
         depth=28
         }
     };
@@ -94,7 +94,7 @@
 
 \draw [connection]  (conv1-east)    -- node {\midarrow} (ccr_b2-west);
 
-\pic[shift={(0.5,0,0)}] at (pool_b2-east) 
+\pic[shift={(0.5,-1,0)}] at (pool_b2-east) 
     {Box={
         name=conv2,
         caption=ResNet50,
@@ -109,7 +109,7 @@
 
 \draw [connection]  (pool_b2-east)    -- node {\midarrow} (conv2-west);
 
-\pic[shift={ (1,0,0) }] at (conv2-east) 
+\pic[shift={ (1,-1,0) }] at (conv2-east) 
     {RightBandedBox={
         name=ccr_b3,
         caption= ,
@@ -117,9 +117,9 @@
         zlabel=64,
         fill=\ConvColor,
         bandfill=\ConvReluColor,
-        height=11,
-        width={ 4.5 , 4.5 },
-        depth=11
+        height=21,
+        width={ 3.5 , 3.5 },
+        depth=21
         }
     };
 
@@ -129,15 +129,15 @@
         caption= ,
         fill=\PoolColor,
         opacity=0.5,
-        height=9,
+        height=16,
         width=1,
-        depth=9
+        depth=16
         }
     };
 
 \draw [connection]  (conv2-east)    -- node {\midarrow} (ccr_b3-west);
 
-\pic[shift={(0.5,0,0)}] at (pool_b3-east) 
+\pic[shift={(0.5,-1,0)}] at (pool_b3-east) 
     {Box={
         name=conv3,
         caption=ResNet50,
@@ -152,7 +152,7 @@
 
 \draw [connection]  (pool_b3-east)    -- node {\midarrow} (conv3-west);
 
-\pic[shift={ (1,0,0) }] at (conv3-east) 
+\pic[shift={ (1,-1,0) }] at (conv3-east) 
     {RightBandedBox={
         name=ccr_b4,
         caption= ,
@@ -180,7 +180,7 @@
 
 \draw [connection]  (conv3-east)    -- node {\midarrow} (ccr_b4-west);
 
-\pic[shift={(0.5,0,0)}] at (pool_b4-east) 
+\pic[shift={(0.5,-1,0)}] at (pool_b4-east) 
     {Box={
         name=conv4,
         caption=ResNet50,
@@ -195,7 +195,7 @@
 
 \draw [connection]  (pool_b4-east)    -- node {\midarrow} (conv4-west);
 
-\pic[shift={ (1,0,0) }] at (conv4-east) 
+\pic[shift={ (1,-1,0) }] at (conv4-east) 
     {RightBandedBox={
         name=ccr_b5,
         caption=Bottleneck,
@@ -209,9 +209,9 @@
         }
     };
 
-\draw [connection]  (pool_b4-east)    -- node {\midarrow} (ccr_b5-west);
+\draw [connection]  (conv4-east)    -- node {\midarrow} (ccr_b5-west);
 
-\pic[shift={ (1.5,0,0) }] at (ccr_b5-east) 
+\pic[shift={ (2.1,2,0) }] at (ccr_b5-east) 
     {Box={
         name=unpool_b6,
         caption= ,
@@ -228,12 +228,12 @@
         name=ccr_res_b6,
         caption= ,
         xlabel={{ 512, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=11,
-        width=5.0,
+        width=1.875,
         depth=11
         }
     };
@@ -242,11 +242,11 @@
     {Box={
         name=ccr_b6,
         caption= ,
-        xlabel={{512, }},
-        zlabel= ,
+        xlabel={{ , }},
+        zlabel=,
         fill=\ConvColor,
         height=11,
-        width=5.0,
+        width=1.875,
         depth=11
         }
     };
@@ -256,12 +256,12 @@
         name=ccr_res_c_b6,
         caption= ,
         xlabel={{ 512, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=11,
-        width=5.0,
+        width=1.875,
         depth=11
         }
     };
@@ -270,33 +270,33 @@
     {Box={
         name=end_b6,
         caption= ,
-        xlabel={{512, }},
+        xlabel={{, }},
         zlabel=32,
         fill=\ConvColor,
         height=11,
-        width=5.0,
+        width=1.875,
         depth=11
         }
     };
 
 \draw [connection]  (ccr_b5-east)    -- node {\midarrow} (unpool_b6-west);
 
-\path (ccr_b4-southeast) -- (ccr_b4-northeast) coordinate[pos=1.25] (ccr_b4-top) ;
-\path (ccr_res_b6-south)  -- (ccr_res_b6-north)  coordinate[pos=1.25] (ccr_res_b6-top) ;
+\path (ccr_b4-southeast) -- (ccr_b4-northeast) coordinate[pos=1.45] (ccr_b4-top) ;
+\path (ccr_res_b6-south)  -- (ccr_res_b6-north)  coordinate[pos=1.45] (ccr_res_b6-top) ;
 \draw [copyconnection]  (ccr_b4-northeast)  
 -- node {\copymidarrow}(ccr_b4-top)
 -- node {\copymidarrow}(ccr_res_b6-top)
 -- node {\copymidarrow} (ccr_res_b6-north);
 
-\pic[shift={ (1.5,0,0) }] at (end_b6-east) 
+\pic[shift={ (2.1,2,0) }] at (end_b6-east) 
     {Box={
         name=unpool_b7,
         caption= ,
         fill=\UnpoolColor,
         opacity=0.5,
-        height=11,
+        height=21,
         width=1,
-        depth=11
+        depth=21
         }
     };
 
@@ -305,13 +305,13 @@
         name=ccr_res_b7,
         caption= ,
         xlabel={{ 256, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
-        height=11,
-        width=4.5,
-        depth=11
+        height=21,
+        width=1.125,
+        depth=21
         }
     };
 
@@ -319,12 +319,12 @@
     {Box={
         name=ccr_b7,
         caption= ,
-        xlabel={{256, }},
-        zlabel= ,
+        xlabel={{ , }},
+        zlabel=,
         fill=\ConvColor,
-        height=11,
-        width=4.5,
-        depth=11
+        height=21,
+        width=1.125,
+        depth=21
         }
     };
 
@@ -333,13 +333,13 @@
         name=ccr_res_c_b7,
         caption= ,
         xlabel={{ 256, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
-        height=11,
-        width=4.5,
-        depth=11
+        height=21,
+        width=1.125,
+        depth=21
         }
     };
 
@@ -347,25 +347,25 @@
     {Box={
         name=end_b7,
         caption= ,
-        xlabel={{256, }},
+        xlabel={{, }},
         zlabel=64,
         fill=\ConvColor,
-        height=11,
-        width=4.5,
-        depth=11
+        height=21,
+        width=1.125,
+        depth=21
         }
     };
 
 \draw [connection]  (end_b6-east)    -- node {\midarrow} (unpool_b7-west);
 
-\path (ccr_b3-southeast) -- (ccr_b3-northeast) coordinate[pos=1.75] (ccr_b3-top) ;
-\path (ccr_res_b7-south)  -- (ccr_res_b7-north)  coordinate[pos=1.75] (ccr_res_b7-top) ;
+\path (ccr_b3-southeast) -- (ccr_b3-northeast) coordinate[pos=1.25] (ccr_b3-top) ;
+\path (ccr_res_b7-south)  -- (ccr_res_b7-north)  coordinate[pos=1.25] (ccr_res_b7-top) ;
 \draw [copyconnection]  (ccr_b3-northeast)  
 -- node {\copymidarrow}(ccr_b3-top)
 -- node {\copymidarrow}(ccr_res_b7-top)
 -- node {\copymidarrow} (ccr_res_b7-north);
 
-\pic[shift={ (1.5,0,0) }] at (end_b7-east) 
+\pic[shift={ (2.1,2,0) }] at (end_b7-east) 
     {Box={
         name=unpool_b8,
         caption= ,
@@ -382,12 +382,12 @@
         name=ccr_res_b8,
         caption= ,
         xlabel={{ 128, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=28,
-        width=3.5,
+        width=0.875,
         depth=28
         }
     };
@@ -396,11 +396,11 @@
     {Box={
         name=ccr_b8,
         caption= ,
-        xlabel={{128, }},
-        zlabel= ,
+        xlabel={{ , }},
+        zlabel=,
         fill=\ConvColor,
         height=28,
-        width=3.5,
+        width=0.875,
         depth=28
         }
     };
@@ -410,12 +410,12 @@
         name=ccr_res_c_b8,
         caption= ,
         xlabel={{ 128, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=28,
-        width=3.5,
+        width=0.875,
         depth=28
         }
     };
@@ -424,11 +424,11 @@
     {Box={
         name=end_b8,
         caption= ,
-        xlabel={{128, }},
+        xlabel={{, }},
         zlabel=128,
         fill=\ConvColor,
         height=28,
-        width=3.5,
+        width=0.875,
         depth=28
         }
     };
@@ -442,7 +442,7 @@
 -- node {\copymidarrow}(ccr_res_b8-top)
 -- node {\copymidarrow} (ccr_res_b8-north);
 
-\pic[shift={ (1.5,0,0) }] at (end_b8-east) 
+\pic[shift={ (2.5,2,0) }] at (end_b8-east) 
     {Box={
         name=unpool_b9,
         caption= ,
@@ -459,12 +459,12 @@
         name=ccr_res_b9,
         caption= ,
         xlabel={{ 64, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=35,
-        width=2.5,
+        width=0.625,
         depth=35
         }
     };
@@ -473,11 +473,11 @@
     {Box={
         name=ccr_b9,
         caption= ,
-        xlabel={{64, }},
-        zlabel= ,
+        xlabel={{ , }},
+        zlabel=,
         fill=\ConvColor,
         height=35,
-        width=2.5,
+        width=0.625,
         depth=35
         }
     };
@@ -487,12 +487,12 @@
         name=ccr_res_c_b9,
         caption= ,
         xlabel={{ 64, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=35,
-        width=2.5,
+        width=0.625,
         depth=35
         }
     };
@@ -501,11 +501,11 @@
     {Box={
         name=end_b9,
         caption= ,
-        xlabel={{64, }},
+        xlabel={{, }},
         zlabel=256,
         fill=\ConvColor,
         height=35,
-        width=2.5,
+        width=0.625,
         depth=35
         }
     };
@@ -519,18 +519,7 @@
 -- node {\copymidarrow}(ccr_res_b9-top)
 -- node {\copymidarrow} (ccr_res_b9-north);
 
-\def\ConvColor{rgb:yellow,5;red,2.5;white,5}
-\def\DcnvColor{rgb:blue,5;green,2.5;white,5}
-\def\ConvReluColor{rgb:yellow,5;red,5;white,5}
-\def\PoolColor{rgb:red,1;black,0.3}
-\def\ReluColor{rgb:red,2;blue,0.1}
-\def\UnpoolColor{rgb:blue,2;green,1;black,0.3}
-\def\FcColor{rgb:blue,5;red,2.5;white,5}
-\def\FcReluColor{rgb:blue,5;red,5;white,4}
-\def\SoftmaxColor{rgb:magenta,5;black,7}   
-\def\SumColor{rgb:blue,5;green,15}
-
-\pic[shift={(1,0,0)}] at (end_b9-east) 
+\pic[shift={(2.5,0,0)}] at (end_b9-east) 
     {Box={
         name=conv2,
         caption=DnCNN,
@@ -538,7 +527,7 @@
         zlabel=256,
         fill=\DcnvColor,
         height=35,
-        width=2,
+        width=5,
         depth=35
         }
     };
@@ -557,7 +546,7 @@
 
 \draw [connection]  (end_b9-east)    -- node {\midarrow} (conv2-west);
 
-\pic[shift={(1,0,0)}] at (pool_conv2-east) 
+\pic[shift={(1.5,0,0)}] at (pool_conv2-east) 
     {Box={
         name=conv3,
         caption= ,
@@ -565,12 +554,25 @@
         zlabel=256,
         fill=\DcnvColor,
         height=35,
-        width=2,
+        width=5,
         depth=35
         }
     };
 
-\pic[shift={ (0,0,0) }] at (conv3-east) 
+\pic[shift={(0,0,0)}] at (conv3-east) 
+    {Box={
+        name=conv35,
+        caption= ,
+        xlabel={{64, }},
+        zlabel=256,
+        fill=\ConvColor,
+        height=35,
+        width=5,
+        depth=35
+        }
+    };
+
+\pic[shift={ (0,0,0) }] at (conv35-east) 
     {Box={
         name=pool_conv3,
         caption= ,
@@ -582,9 +584,9 @@
         }
     };
 
-\draw [connection]  (conv2-east)    -- node {\midarrow} (conv3-west);
+\draw [connection]  (pool_conv2-east)    -- node {\midarrow} (conv3-west);
 
-\pic[shift={(1,0,0)}] at (pool_conv3-east) 
+\pic[shift={(1.5,0,0)}] at (pool_conv3-east) 
     {Box={
         name=conv4,
         caption= ,
@@ -592,12 +594,25 @@
         zlabel=256,
         fill=\DcnvColor,
         height=35,
-        width=2,
+        width=5,
         depth=35
         }
     };
 
-\pic[shift={ (0,0,0) }] at (conv4-east) 
+\pic[shift={(0,0,0)}] at (conv4-east) 
+    {Box={
+        name=conv45,
+        caption= ,
+        xlabel={{64, }},
+        zlabel=256,
+        fill=\ConvColor,
+        height=35,
+        width=5,
+        depth=35
+        }
+    };
+
+\pic[shift={ (0,0,0) }] at (conv45-east) 
     {Box={
         name=pool_conv4,
         caption= ,
@@ -609,9 +624,9 @@
         }
     };
 
-\draw [connection]  (conv3-east)    -- node {\midarrow} (conv4-west);
+\draw [connection]  (pool_conv3-east)    -- node {\midarrow} (conv4-west);
 
-\pic[shift={(0.75,0,0)}] at (conv4-east) 
+\pic[shift={(2.45,0,0)}] at (pool_conv4-east) 
     {Box={
         name=soft1,
         caption=Sigmoid,
@@ -623,7 +638,7 @@
         }
     };
 
-\draw [connection]  (conv4-east)    -- node {\midarrow} (soft1-west);
+\draw [connection]  (pool_conv4-east)    -- node {\midarrow} (soft1-west);
 
 \end{tikzpicture}
 \end{document}

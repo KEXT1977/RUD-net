@@ -51,7 +51,7 @@
         }
     };
 
-\pic[shift={ (1,0,0) }] at (pool_b1-east) 
+\pic[shift={ (1,-2,0) }] at (pool_b1-east) 
     {RightBandedBox={
         name=ccr_b2,
         caption= ,
@@ -60,7 +60,7 @@
         fill=\ConvColor,
         bandfill=\ConvReluColor,
         height=32,
-        width={ 3.5 , 3.5 },
+        width={ 2.5 , 2.5 },
         depth=32
         }
     };
@@ -79,7 +79,7 @@
 
 \draw [connection]  (pool_b1-east)    -- node {\midarrow} (ccr_b2-west);
 
-\pic[shift={ (1,0,0) }] at (pool_b2-east) 
+\pic[shift={ (1,-2,0) }] at (pool_b2-east) 
     {RightBandedBox={
         name=ccr_b3,
         caption= ,
@@ -88,7 +88,7 @@
         fill=\ConvColor,
         bandfill=\ConvReluColor,
         height=25,
-        width={ 4.5 , 4.5 },
+        width={ 3.5 , 3.5 },
         depth=25
         }
     };
@@ -107,7 +107,7 @@
 
 \draw [connection]  (pool_b2-east)    -- node {\midarrow} (ccr_b3-west);
 
-\pic[shift={ (1,0,0) }] at (pool_b3-east) 
+\pic[shift={ (1,-2,0) }] at (pool_b3-east) 
     {RightBandedBox={
         name=ccr_b4,
         caption= ,
@@ -116,7 +116,7 @@
         fill=\ConvColor,
         bandfill=\ConvReluColor,
         height=16,
-        width={ 5.5 , 5.5 },
+        width={ 4.5 , 4.5 },
         depth=16
         }
     };
@@ -144,7 +144,7 @@
         fill=\ConvColor,
         bandfill=\ConvReluColor,
         height=8,
-        width={ 8 , 8 },
+        width={ 7 , 7 },
         depth=8
         }
     };
@@ -168,12 +168,12 @@
         name=ccr_res_b6,
         caption= ,
         xlabel={{ 512, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=16,
-        width=5.0,
+        width=1.625,
         depth=16
         }
     };
@@ -182,11 +182,11 @@
     {Box={
         name=ccr_b6,
         caption= ,
-        xlabel={{512, }},
-        zlabel= ,
+        xlabel={{ , }},
+        zlabel=,
         fill=\ConvColor,
         height=16,
-        width=5.0,
+        width=1.625,
         depth=16
         }
     };
@@ -196,12 +196,12 @@
         name=ccr_res_c_b6,
         caption= ,
         xlabel={{ 512, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=16,
-        width=5.0,
+        width=1.625,
         depth=16
         }
     };
@@ -210,11 +210,11 @@
     {Box={
         name=end_b6,
         caption= ,
-        xlabel={{512, }},
+        xlabel={{, }},
         zlabel=32,
         fill=\ConvColor,
         height=16,
-        width=5.0,
+        width=1.625,
         depth=16
         }
     };
@@ -228,7 +228,7 @@
 -- node {\copymidarrow}(ccr_res_b6-top)
 -- node {\copymidarrow} (ccr_res_b6-north);
 
-\pic[shift={ (2.1,0,0) }] at (end_b6-east) 
+\pic[shift={ (2.1,2,0) }] at (end_b6-east) 
     {Box={
         name=unpool_b7,
         caption= ,
@@ -245,12 +245,12 @@
         name=ccr_res_b7,
         caption= ,
         xlabel={{ 256, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=25,
-        width=4.5,
+        width=1.375,
         depth=25
         }
     };
@@ -259,11 +259,11 @@
     {Box={
         name=ccr_b7,
         caption= ,
-        xlabel={{256, }},
-        zlabel= ,
+        xlabel={{ , }},
+        zlabel=,
         fill=\ConvColor,
         height=25,
-        width=4.5,
+        width=1.375,
         depth=25
         }
     };
@@ -273,12 +273,12 @@
         name=ccr_res_c_b7,
         caption= ,
         xlabel={{ 256, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=25,
-        width=4.5,
+        width=1.375,
         depth=25
         }
     };
@@ -287,11 +287,11 @@
     {Box={
         name=end_b7,
         caption= ,
-        xlabel={{256, }},
+        xlabel={{, }},
         zlabel=64,
         fill=\ConvColor,
         height=25,
-        width=4.5,
+        width=1.375,
         depth=25
         }
     };
@@ -305,7 +305,7 @@
 -- node {\copymidarrow}(ccr_res_b7-top)
 -- node {\copymidarrow} (ccr_res_b7-north);
 
-\pic[shift={ (2.1,0,0) }] at (end_b7-east) 
+\pic[shift={ (2.1,2,0) }] at (end_b7-east) 
     {Box={
         name=unpool_b8,
         caption= ,
@@ -322,12 +322,12 @@
         name=ccr_res_b8,
         caption= ,
         xlabel={{ 128, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=32,
-        width=3.5,
+        width=1.125,
         depth=32
         }
     };
@@ -336,11 +336,11 @@
     {Box={
         name=ccr_b8,
         caption= ,
-        xlabel={{128, }},
-        zlabel= ,
+        xlabel={{ , }},
+        zlabel=,
         fill=\ConvColor,
         height=32,
-        width=3.5,
+        width=1.125,
         depth=32
         }
     };
@@ -350,12 +350,12 @@
         name=ccr_res_c_b8,
         caption= ,
         xlabel={{ 128, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=32,
-        width=3.5,
+        width=1.125,
         depth=32
         }
     };
@@ -364,11 +364,11 @@
     {Box={
         name=end_b8,
         caption= ,
-        xlabel={{128, }},
+        xlabel={{, }},
         zlabel=128,
         fill=\ConvColor,
         height=32,
-        width=3.5,
+        width=1.125,
         depth=32
         }
     };
@@ -382,7 +382,7 @@
 -- node {\copymidarrow}(ccr_res_b8-top)
 -- node {\copymidarrow} (ccr_res_b8-north);
 
-\pic[shift={ (2.1,0,0) }] at (end_b8-east) 
+\pic[shift={ (2.1,2,0) }] at (end_b8-east) 
     {Box={
         name=unpool_b9,
         caption= ,
@@ -399,12 +399,12 @@
         name=ccr_res_b9,
         caption= ,
         xlabel={{ 64, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=40,
-        width=2.5,
+        width=0.875,
         depth=40
         }
     };
@@ -413,11 +413,11 @@
     {Box={
         name=ccr_b9,
         caption= ,
-        xlabel={{64, }},
-        zlabel= ,
+        xlabel={{ , }},
+        zlabel=,
         fill=\ConvColor,
         height=40,
-        width=2.5,
+        width=0.875,
         depth=40
         }
     };
@@ -427,12 +427,12 @@
         name=ccr_res_c_b9,
         caption= ,
         xlabel={{ 64, }},
-        zlabel= ,
+        zlabel=,
         fill={rgb:white,1;black,3},
         bandfill={rgb:white,1;black,2},
         opacity=0.5,
         height=40,
-        width=2.5,
+        width=0.875,
         depth=40
         }
     };
@@ -441,11 +441,11 @@
     {Box={
         name=end_b9,
         caption= ,
-        xlabel={{64, }},
+        xlabel={{, }},
         zlabel=256,
         fill=\ConvColor,
         height=40,
-        width=2.5,
+        width=0.875,
         depth=40
         }
     };
@@ -459,7 +459,7 @@
 -- node {\copymidarrow}(ccr_res_b9-top)
 -- node {\copymidarrow} (ccr_res_b9-north);
 
-\pic[shift={(0.75,0,0)}] at (end_b9-east) 
+\pic[shift={(1.55,0,0)}] at (end_b9-east) 
     {Box={
         name=soft1,
         caption=Sigmoid,

@@ -50,7 +50,7 @@
         }
     };
 
-\pic[shift={(2,0,0)}] at (pool_conv2-east) 
+\pic[shift={(1.5,0,0)}] at (pool_conv2-east) 
     {Box={
         name=conv3,
         caption= ,
@@ -63,7 +63,20 @@
         }
     };
 
-\pic[shift={ (0,0,0) }] at (conv3-east) 
+\pic[shift={(0,0,0)}] at (conv3-east) 
+    {Box={
+        name=conv35,
+        caption= ,
+        xlabel={{64, }},
+        zlabel=256,
+        fill=\ConvColor,
+        height=35,
+        width=5,
+        depth=35
+        }
+    };
+
+\pic[shift={ (0,0,0) }] at (conv35-east) 
     {Box={
         name=pool_conv3,
         caption= ,
@@ -75,9 +88,9 @@
         }
     };
 
-\draw [connection]  (conv2-east)    -- node {\midarrow} (conv3-west);
+\draw [connection]  (pool_conv2-east)    -- node {\midarrow} (conv3-west);
 
-\pic[shift={(2,0,0)}] at (pool_conv3-east) 
+\pic[shift={(1.5,0,0)}] at (pool_conv3-east) 
     {Box={
         name=conv4,
         caption= ,
@@ -90,7 +103,20 @@
         }
     };
 
-\pic[shift={ (0,0,0) }] at (conv4-east) 
+\pic[shift={(0,0,0)}] at (conv4-east) 
+    {Box={
+        name=conv45,
+        caption= ,
+        xlabel={{64, }},
+        zlabel=256,
+        fill=\ConvColor,
+        height=35,
+        width=5,
+        depth=35
+        }
+    };
+
+\pic[shift={ (0,0,0) }] at (conv45-east) 
     {Box={
         name=pool_conv4,
         caption= ,
@@ -102,9 +128,9 @@
         }
     };
 
-\draw [connection]  (conv3-east)    -- node {\midarrow} (conv4-west);
+\draw [connection]  (pool_conv3-east)    -- node {\midarrow} (conv4-west);
 
-\pic[shift={(2,0,0)}] at (pool_conv4-east) 
+\pic[shift={(1.5,0,0)}] at (pool_conv4-east) 
     {Box={
         name=conv5,
         caption= ,
@@ -117,7 +143,20 @@
         }
     };
 
-\pic[shift={ (0,0,0) }] at (conv5-east) 
+\pic[shift={(0,0,0)}] at (conv5-east) 
+    {Box={
+        name=conv55,
+        caption= ,
+        xlabel={{64, }},
+        zlabel=256,
+        fill=\ConvColor,
+        height=35,
+        width=5,
+        depth=35
+        }
+    };
+
+\pic[shift={ (0,0,0) }] at (conv55-east) 
     {Box={
         name=pool_conv5,
         caption= ,
@@ -129,9 +168,9 @@
         }
     };
 
-\draw [connection]  (conv4-east)    -- node {\midarrow} (conv5-west);
+\draw [connection]  (pool_conv4-east)    -- node {\midarrow} (conv5-west);
 
-\pic[shift={(2,0,0)}] at (pool_conv5-east) 
+\pic[shift={(1.5,0,0)}] at (pool_conv5-east) 
     {Box={
         name=conv6,
         caption= ,
@@ -144,7 +183,20 @@
         }
     };
 
-\pic[shift={ (0,0,0) }] at (conv6-east) 
+\pic[shift={(0,0,0)}] at (conv6-east) 
+    {Box={
+        name=conv65,
+        caption= ,
+        xlabel={{64, }},
+        zlabel=256,
+        fill=\ConvColor,
+        height=35,
+        width=5,
+        depth=35
+        }
+    };
+
+\pic[shift={ (0,0,0) }] at (conv65-east) 
     {Box={
         name=pool_conv6,
         caption= ,
@@ -156,9 +208,9 @@
         }
     };
 
-\draw [connection]  (conv5-east)    -- node {\midarrow} (conv6-west);
+\draw [connection]  (pool_conv5-east)    -- node {\midarrow} (conv6-west);
 
-\pic[shift={(1.75,0,0)}] at (conv6-east) 
+\pic[shift={(2.55,0,0)}] at (conv6-east) 
     {Box={
         name=soft1,
         caption=Sigmoid,
@@ -170,7 +222,7 @@
         }
     };
 
-\draw [connection]  (conv6-east)    -- node {\midarrow} (soft1-west);
+\draw [connection]  (pool_conv6-east)    -- node {\midarrow} (soft1-west);
 
 \end{tikzpicture}
 \end{document}
