@@ -6,7 +6,7 @@ This repository contains an official implementation of RUD-Net of paper
 ["基于深度学习的骨骼语义分割"]()
 
 
-![image](pic/resunet__dncnn.png)
+![image](pic/plotneuralnet-master/unet_pic/resunet__dncnn.png)
 
 ## Quick start
 
